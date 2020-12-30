@@ -6,31 +6,15 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import db.DB;
+import model.entities.Department;
 
 public class Program {
     
     public static void main(String[] args) {
-        
-        Connection conn = null;
-        Statement st = null;
-        ResultSet rs = null;
 
-        try {
-            conn = DB.getConnection();
-            st = conn.createStatement();
-            rs = st.executeQuery("SELECT * FROM department");
+        Department obj = new Department(1, "Books");
+        System.out.println(obj);
 
-            while (rs.next()) {
-                System.out.println(rs.getInt("Id") + ", " + rs.getString("Name"));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        finally{
-            DB.closeResultSet(rs);
-            DB.closeStatement(st);
-            DB.closeConnection();
-        }
     }
 
 }
