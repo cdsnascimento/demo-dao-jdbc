@@ -22,7 +22,7 @@ public class Program {
 
         System.out.println("\n==== TEST 2: seller findByDepartment ====");
 
-        Department department = new Department(2, null);
+        Department department = new Department(3, null);
         List<Seller> list = sellerDao.findByDepartment(department);
 
         for (Seller obj:list ){
@@ -39,7 +39,7 @@ public class Program {
 
         System.out.println("\n==== TEST 4: seller insert ====");
 
-        Seller newSeller = new Seller(null, "Emma", "emma@gmail.com", new Date(), 3500.0, department);
+        Seller newSeller = new Seller(null, "Eduarda", "eduarda@gmail.com", new Date(), 5500.0, department);
         sellerDao.insert(newSeller);
 
         System.out.println("Inserted New Id: " + newSeller.getId());
