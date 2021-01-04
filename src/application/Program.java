@@ -37,12 +37,23 @@ public class Program {
             System.out.println(obj);
         }
 
-        System.out.println("\n==== TEST 4: seller insert ====");
+        // System.out.println("\n==== TEST 4: seller insert ====");
 
-        Seller newSeller = new Seller(null, "Eduarda", "eduarda@gmail.com", new Date(), 5500.0, department);
-        sellerDao.insert(newSeller);
+        // Seller newSeller = new Seller(null, "Eduarda", "eduarda@gmail.com", new Date(), 5500.0, department);
+        // sellerDao.insert(newSeller);
 
-        System.out.println("Inserted New Id: " + newSeller.getId());
+        // System.out.println("Inserted New Id: " + newSeller.getId());
+
+        System.out.println("\n==== TEST 5: seller update ====");
+
+        seller = sellerDao.findById(12);
+        seller.setName("Eduarda Senra");
+
+        sellerDao.update(seller);
+
+        System.out.println("Update completed: Name = " + seller.getName());
+
+
 
     }
 
